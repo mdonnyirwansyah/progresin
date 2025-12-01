@@ -1,10 +1,10 @@
 <div align="center">
 
 <h1 align="center">
-    Progresin.id – Catat. Lacak. Beresin.
+    Progresin.id — Catat. Lacak. Kendalikan Keuangan.
 </h1>
 
-![Version](https://img.shields.io/badge/version-1.0.0-brightgreen?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-0.1.0-orange?style=for-the-badge)
 ![Requirements](https://img.shields.io/badge/php-%3E%3D%208.2.19-4F5D95?style=for-the-badge)
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-6f42c1?style=for-the-badge)](https://github.com/mdonnyirwansyah/progresin)
 
@@ -20,17 +20,31 @@
 
 ## 📚 Perkenalan
 
-Progresin.id adalah platform manajemen proyek terpadu. Dengan fokus pada transparansi, akuntabilitas, dan efisiensi, Progresin.id membantu setiap anggota tim untuk berkolaborasi secara lebih terstruktur dari awal hingga akhir.
+**Progresin.id** adalah aplikasi manajemen keuangan personal untuk membantu pengguna mencatat, mengelola, dan menganalisis kondisi finansial secara terpusat.
+
+Fokus utama:
+- Pencatatan keuangan harian
+- Kontrol arus kas masuk dan keluar
+- Manajemen dompet (wallet)
+- Visibilitas kondisi finansial
+- Perencanaan keuangan objektif
 
 ## 🌟 Fitur
 
-1. Sign Up
-2. Login
-3. Sign Up/Login via Google
-4. Email Verification
-5. Forgot Password
-6. Confirm Password
-7. Multi Language
+### Autentikasi & Akses
+- Sign Up
+- Login
+- Sign Up / Login via Google
+- Email Verification
+- Reset Password
+- Confirm Password
+- Multi Language
+
+### Manajemen Keuangan
+- Multi Wallet
+- Catat transaksi pemasukan & pengeluaran
+- Saldo otomatis terupdate
+- Riwayat transaksi
 
 ## 🚀 Instalasi
 
