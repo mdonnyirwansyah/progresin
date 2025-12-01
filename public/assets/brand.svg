@@ -1,0 +1,13 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 2048 2048">
+  <!-- Ikon memenuhi canvas -->
+  <g transform="scale(6.826)">
+    <rect x="0" y="0" width="300" height="300" rx="60" fill="#D6EAF8"/>
+    <circle cx="150" cy="150" r="110" fill="white"/>
+    <polyline points="80,190 120,120 170,150 220,90" fill="none" stroke="#1F4E79" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="80" cy="190" r="14" fill="#1F4E79" stroke="white" stroke-width="4"/>
+    <circle cx="120" cy="120" r="14" fill="#1F4E79" stroke="white" stroke-width="4"/>
+    <circle cx="170" cy="150" r="14" fill="#1F4E79" stroke="white" stroke-width="4"/>
+    <circle cx="220" cy="90" r="14" fill="#1F4E79" stroke="white" stroke-width="4"/>
+  </g>
+</svg>

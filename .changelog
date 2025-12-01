@@ -1,0 +1,46 @@
+<?php
+
+namespace ConventionalChangelog;
+
+use ConventionalChangelog\Git\Repository;
+use ConventionalChangelog\Helper\SemanticVersion;
+
+$releaseMessagePrefix = 'chore(release): ';
+
+return [
+    'types' => ['feat', 'fix'],
+    'ignoreTypes' => ['build', 'chore', 'ci', 'docs', 'refactor', 'revert', 'style', 'test'],
+    'releaseCommitMessageFormat' => "{$releaseMessagePrefix}{{currentTag}}",
+    'postRun' => function () use ($releaseMessagePrefix) {
+        $lastTag = Repository::getLastTagRefname();
+        $lastTagCommit = Repository::getLastTagRefnameCommit();
+        $lastCommit = Repository::getLastCommit();
+
+        if ($lastTagCommit !== $lastCommit) {
+            return;
+        }
+
+        $versionFile = __DIR__ . '/version';
+        $readmeFile = __DIR__ . '/README.md';
+        $semverRegex = SemanticVersion::PATTERN;
+
+        // Get version
+        $version = new SemanticVersion($lastTag);
+
+        // Update version on readme
+        $readme = file_get_contents($readmeFile);
+        $readme = preg_replace("/(https:\/\/img\.shields\.io\/badge\/version)-({$semverRegex})-/m", '$1-' . $version->getVersion() . '-', $readme);
+        file_put_contents($readmeFile, $readme);
+
+        // Update version file
+        file_put_contents($versionFile, $version->getVersion());
+
+        // Delete tag
+        Repository::deleteTag($lastTag);
+
+        // Commit and tag
+        $message = $releaseMessagePrefix . $version->getVersion();
+        Repository::commit($message, [$readmeFile], true, true, true);
+        Repository::tag($lastTag);
+    },
+];
