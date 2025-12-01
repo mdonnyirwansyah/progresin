@@ -168,9 +168,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('example') ? 'active' : '' }}" href="{{ route('example') }}">
-                                <span data-feather="archive"></span>
-                                {{ __('Example') }}
+                            <a class="nav-link {{ request()->routeIs('wallet.view') ? 'active' : '' }}" href="{{ route('wallet.view') }}">
+                                <span data-feather="credit-card"></span>
+                                {{ __('Wallet') }}
                             </a>
                         </li>
                     </ul>
@@ -189,7 +189,7 @@
 
                 <footer class="ml-sm-auto py-3 py-md-4" style="display: grid;">
                     <div class="py-3 px-3 text-center bg-primary d-flex justify-content-between" style="align-self: end; border-radius: 5px;">
-                        <span class="text-white">&copy;{{ date('Y') }} Progresin.id</span> <span class="text-white">Version {{ file_get_contents(base_path('version')) }}</span>
+                        <span class="text-white">&copy;{{ date('Y') }} Progresin.id</span> <span class="text-white">{{ __('Version') }} {{ file_get_contents(base_path('version')) }}</span>
                     </div>
                 </footer>
             </main>
@@ -203,6 +203,40 @@
             </div>
         </div>
     </div>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="app-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i id="toast-icon" class="bi bi-info-circle me-2"></i>
+                <strong id="toast-title" class="me-auto"></strong>
+                <small id="toast-time"></small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toast-message"></div>
+        </div>
+    </div>
+    
+    <div class="toast-container p-3 position-fixed top-50 start-50 translate-middle">
+        <div id="confirm-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+            <div class="toast-header d-flex justify-content-center border-0">
+                <i id="confirm-icon" class="bi bi-question-circle fs-1 text-warning"></i>
+            </div>
+            <div class="toast-body text-center">
+                <p id="confirm-message" class="fs-5 fw-semibold mb-3">
+                    {{ __('Are you sure?') }}
+                </p>
+                <div class="d-flex justify-content-center gap-2">
+                    <button type="button" id="confirm-yes" class="btn btn-sm btn-primary">
+                        {{ __('Yes') }}
+                    </button>
+                    <button type="button" id="confirm-no" class="btn btn-sm btn-secondary" data-bs-dismiss="toast">
+                        {{ __('No') }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @stack('scripts')
 </body>
 </html>

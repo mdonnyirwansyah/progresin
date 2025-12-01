@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\WalletController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\AuthController;
 
@@ -19,6 +20,23 @@ Route::middleware(['auth', 'auth.session'])
                     return view('app.password');
                 })
                     ->name('password');
+                Route::prefix('wallet')
+                    ->name('wallet.')
+                    ->controller(WalletController::class)
+                    ->group(function () {
+                        Route::get('/', 'view')
+                            ->name('view');
+                        Route::get('/list', 'list')
+                            ->name('list');
+                        Route::post('/', 'store')
+                            ->name('store');
+                        Route::get('/{wallet:slug}', 'show')
+                            ->name('show');
+                        Route::put('/{wallet:slug}', 'update')
+                            ->name('update');
+                        Route::delete('/{wallet:slug}', 'destroy')
+                            ->name('destroy');
+                    });
             });
         Route::post('logout', [AuthController::class, 'logout'])
             ->name('logout');
