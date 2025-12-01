@@ -253,7 +253,7 @@
         <tbody></tbody>
     </table>
     <div class="modal fade" id="wallet-modal" tabindex="-1" aria-labelledby="wallet-modal-label" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <form id="wallet-form" class="modal-content">
                 <input type="hidden" id="wallet-slug">
                 <div class="modal-header">

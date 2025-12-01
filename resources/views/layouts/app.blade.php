@@ -38,13 +38,15 @@
             <div class="nav-item text-nowrap d-flex align-items-center gap-3 px-3" style="min-height: 50px;">
                 <div class="dropdown">
                     <a href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                        class="d-inline-flex align-items-center text-decoration-none">
-                        <div class="me-2 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; font-size: 1.6rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ __('Language') }}">
-                        🇬🇧
+                       class="d-inline-flex align-items-center text-decoration-none text-light gap-2">
+                        <div class="d-flex align-items-center justify-content-center glass-icon-pill"
+                             data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ __('Language') }}">
+                            🇬🇧
                         </div>
-                        <small class="d-inline d-sm-none text-white">{{ __('Language') }}</small>
+                        <small class="d-inline d-sm-none">{{ __('Language') }}</small>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-sm-end shadow mt-2 position-absolute p-0" aria-labelledby="languageDropdown">
+                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-sm-end shadow mt-2 position-absolute p-0 glass-dropdown"
+                        aria-labelledby="languageDropdown">
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <span class="me-2">🇬🇧</span> <small>{{ __('English') }}</small>
@@ -57,57 +59,69 @@
                         </li>
                     </ul>
                 </div>
+
+                {{-- Notification --}}
                 <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center text-decoration-none" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <div style="width: 30px; height: 30px;" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ __('Notification') }}">
-                            <i class="fs-5 bi bi-bell text-white"></i>
-                            <span class="spinner-grow spinner-grow-sm position-absolute top-30 start-90 translate-middle badge rounded-pill bg-secondary" style="font-size: 7px; width: fit-content;">
-                                +99 <span class="visually-hidden">{{ __('unread notifications') }}</span>
+                    <a href="#" class="d-flex align-items-center text-decoration-none text-light gap-1"
+                       id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="position-relative glass-icon-pill"
+                             data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ __('Notification') }}">
+                            <i class="fs-5 bi bi-bell"></i>
+                            <span class="spinner-grow spinner-grow-sm position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                                  style="font-size: 7px; width: fit-content;">
+                                <span class="text-black">+99</span> <span class="visually-hidden">{{ __('unread notifications') }}</span>
                             </span>
                         </div>
-                        <small class="d-inline d-sm-none text-white">{{ __('Notifications') }}</small>
+                        <small class="d-inline d-sm-none ms-1">{{ __('Notifications') }}</small>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-sm-end shadow mt-2 position-absolute p-0" aria-labelledby="notificationDropdown" style="width: 250px; max-height: 320px; overflow-y: auto;" data-bs-display="static">
-                        <li class="sticky-top bg-light border-bottom">
+                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-sm-end shadow mt-2 position-absolute p-0 glass-dropdown"
+                        aria-labelledby="notificationDropdown" style="width: 260px; max-height: 320px; overflow-y: auto;"
+                        data-bs-display="static">
+                        <li class="sticky-top glass-dropdown-header">
                             <div class="d-flex align-items-center justify-content-between px-3 py-2">
-                                <strong>{{ __('Notifications') }}</strong>
-                                <button class="btn btn-sm btn-link text-decoration-none"><small>{{ __('Mark all as read') }}</small></button>
+                                <strong class="small text-light">{{ __('Notifications') }}</strong>
+                                <button class="btn btn-sm btn-link text-decoration-none text-accent">
+                                    <small>{{ __('Mark all as read') }}</small>
+                                </button>
                             </div>
                         </li>
                         <li>
                             <a class="dropdown-item py-2" href="#">
                                 <div class="d-flex">
-                                    <div class="me-2">
+                                    <div class="me-2 text-accent">
                                         <i class="bi bi-chat-left-text"></i>
                                     </div>
                                     <div class="flex-grow-1">
-                                        <div style="font-size: 14px;">New message</div>
-                                        <small style="font-size: 10px;">1 minutes ago</small>
+                                        <div class="small fw-semibold text-light">New message</div>
+                                        <small class="extra-muted">1 minutes ago</small>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <hr class="dropdown-divider my-0">
+                            <hr class="dropdown-divider my-0 border-glass-soft">
                         </li>
                         <li>
                             <a class="dropdown-item py-2 position-relative" href="#">
                                 <div class="d-flex">
-                                    <div class="me-2">
+                                    <div class="me-2 text-accent">
                                         <i class="bi bi-chat-left-text"></i>
                                     </div>
                                     <div class="flex-grow-1">
-                                        <div style="font-size: 14px;">Coming Soon</div>
-                                        <small style="font-size: 10px;">5 minutes ago</small>
+                                        <div class="small fw-semibold text-light">Coming Soon</div>
+                                        <small class="extra-muted">5 minutes ago</small>
                                     </div>
                                     <span class="position-absolute top-50 end-0 translate-middle-y me-2">
-                                        <span class="spinner-grow spinner-grow-sm d-inline-block bg-secondary rounded-circle" style="width: 8px; height: 8px;"></span>
+                                        <span class="spinner-grow spinner-grow-sm d-inline-block bg-accent rounded-circle"
+                                              style="width: 8px; height: 8px;"></span>
                                     </span>
                                 </div>
                             </a>
                         </li>
                     </ul>
                 </div>
+
+                {{-- Profile --}}
                 <div class="dropdown">
                     @php
                         $user = Auth::user();
@@ -120,17 +134,24 @@
                             $short_name = $last_name;
                         }
                     @endphp
-                    <a href="#" class="d-flex align-items-center text-decoration-none gap-2" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="#" class="d-flex align-items-center text-decoration-none gap-2 text-light"
+                       id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                         @if($user->avatar ?? false)
-                        <img src="{{ asset('storage/' . $user->avatar) }}" alt="avatar" class="rounded-circle" width="30" height="30" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ __('Profile') }}">
+                            <img src="{{ asset('storage/' . $user->avatar) }}" alt="avatar"
+                                 class="rounded-circle glass-avatar"
+                                 width="30" height="30"
+                                 data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ __('Profile') }}">
                         @else
-                        <div class="rounded-circle bg-dark text-white d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; font-weight: bold;" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ __('Profile') }}">
-                            {{ $initials }}
-                        </div>
+                            <div class="rounded-circle glass-avatar d-flex align-items-center justify-content-center fw-semibold"
+                                 style="width: 30px; height: 30px;"
+                                 data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ __('Profile') }}">
+                                {{ $initials }}
+                            </div>
                         @endif
-                        <small class="d-inline d-sm-none text-white">{{ $short_name }}</small>
+                        <small class="d-inline d-sm-none">{{ $short_name }}</small>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-sm-end shadow mt-2 position-absolute p-0" aria-labelledby="profileDropdown">
+                    <ul class="dropdown-menu dropdown-menu-start dropdown-menu-sm-end shadow mt-2 position-absolute p-0 glass-dropdown"
+                        aria-labelledby="profileDropdown">
                         <li>
                             <a class="dropdown-item" href="{{ route('profile') }}">
                                 <i class="bi bi-person me-2"></i> <small>{{ __('Profile') }}</small>
@@ -205,32 +226,32 @@
     </div>
 
     <div class="toast-container position-fixed top-0 end-0 p-3">
-        <div id="app-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <i id="toast-icon" class="bi bi-info-circle me-2"></i>
-                <strong id="toast-title" class="me-auto"></strong>
-                <small id="toast-time"></small>
-                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        <div id="app-toast" class="toast glass-toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header glass-toast-header">
+                <i id="toast-icon" class="bi bi-info-circle me-2 text-accent"></i>
+                <strong id="toast-title" class="me-auto small text-light"></strong>
+                <small id="toast-time" class="extra-muted"></small>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
             </div>
-            <div class="toast-body" id="toast-message"></div>
+            <div class="toast-body small text-light" id="toast-message"></div>
         </div>
     </div>
-    
+
     <div class="toast-container p-3 position-fixed top-50 start-50 translate-middle">
         <div id="confirm-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
             <div class="toast-header d-flex justify-content-center border-0">
-                <i id="confirm-icon" class="bi bi-question-circle fs-1 text-warning"></i>
+                <i id="confirm-icon" class="bi bi-question-circle fs-1 text-accent"></i>
             </div>
             <div class="toast-body text-center">
                 <p id="confirm-message" class="fs-5 fw-semibold mb-3">
                     {{ __('Are you sure?') }}
                 </p>
                 <div class="d-flex justify-content-center gap-2">
-                    <button type="button" id="confirm-yes" class="btn btn-sm btn-primary">
+                    <button type="button" id="confirm-yes" class="btn btn-sm btn-outline-primary">
                         {{ __('Yes') }}
                     </button>
-                    <button type="button" id="confirm-no" class="btn btn-sm btn-secondary" data-bs-dismiss="toast">
-                        {{ __('No') }}
+                    <button type="button" id="confirm-no" class="btn btn-sm btn-outline-danger" data-bs-dismiss="toast">
+                        {{ __('Cancel') }}
                     </button>
                 </div>
             </div>

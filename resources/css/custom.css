@@ -1,13 +1,10 @@
-/* ===============================
-   Sky Pastel Bootstrap Overrides
-   =============================== */
 :root {
-    --sky-primary: #1F4E79;
-    --sky-primary-600: #163758;
-    --sky-primary-700: #112a45;
-    --sky-subtle: #D6EAF8;
-    --sky-border: #A9CCE3;
-    --sky-focus-rgb: 31, 78, 121;
+    --sky-primary: #0F172A;
+    --sky-primary-600: #0B1220;
+    --sky-primary-700: #020617;
+    --sky-subtle: #E5EEFA;
+    --sky-border: #94A3B8;
+    --sky-focus-rgb: 56, 189, 248;
 }
 
 .btn-primary {
@@ -172,7 +169,7 @@ a.link-primary:hover {
 }
 
 .select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field:focus {
-  border-color: var(--sky-primary);
-  box-shadow: 0 0 0 .25rem rgba(var(--sky-focus-rgb), .25);
-  outline: 0;
+    border-color: var(--sky-primary);
+    box-shadow: 0 0 0 .25rem rgba(var(--sky-focus-rgb), .25);
+    outline: 0;
 }
